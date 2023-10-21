@@ -51,10 +51,12 @@ Each component can return exactly one jsx element
 #### JSX
 JSX is all about component's appearance  
 Each JSX element is converted into `React.createElement`  
+We can enter JavaSsript mode by using `{ //javascript code }` 
 
-### Props
+#### Props
 Props are used to pass data from parent componet to child component   
-Anything can be passed through props: values,arrays,objects,functions,components
+Anything can be passed through props: values,arrays,objects,functions,components  
+**Props are read only ie immutable**   
 **Steps**: 
 + Pass props to the child component 
 ```javascript
@@ -77,3 +79,48 @@ function Avatar(props) {
   //use data by means of props.person , props.size
 }
 ```
+#### Rendering List   
+**Steps:**  
++ Move the data into an array   
++ Map the people members into a new array of JSX nodes, listItems    
++ Return listItems from your component wrapped in a `\<ul\>`
+   
+`Note: Each child in a list should have a unique 'key' prop.`  
+```javascript
+const people = [{
+  id: 0,
+  name: 'Creola Katherine Johnson',
+  profession: 'mathematician',
+}, {
+  id: 1,
+  name: 'Mario José Molina-Pasquel Henríquez',
+  profession: 'chemist',
+}, {
+  id: 2,
+  name: 'Mohammad Abdus Salam',
+  profession: 'physicist',
+}, {
+  name: 'Percy Lavon Julian',
+  profession: 'chemist',  
+}, {
+  name: 'Subrahmanyan Chandrasekhar',
+  profession: 'astrophysicist',
+}];
+
+export default function List() {
+  const listItems = people.map(person =>
+    <li key={person.id}>{person.name : {person.profession} </li>
+  );
+  return <ul>{listItems}</ul>;
+}
+```
+
+
+
+
+
+
+
+
+
+
