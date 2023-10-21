@@ -56,6 +56,7 @@ We can enter JavaSsript mode by using `{ //javascript code }`
 #### Props
 Props are used to pass data from parent componet to child component   
 Anything can be passed through props: values,arrays,objects,functions,components  
+Nested JSX like `<Card><Avatar /></Card>` will appear in Card component’s.youc can access using `props.children` prop.
 **Props are read only ie immutable**   
 **Steps**: 
 + Pass props to the child component 
@@ -71,8 +72,12 @@ export default function Profile() {
 ```
 + Read props inside the child component
 ```javascript
-function Avatar({ person, size }) {
+function Avatar({ person, size }){
   // use data by means of person and size are available here
+}
+//OR
+function Avatar({ ..props }){
+  
 }
 //OR
 function Avatar(props) {
@@ -115,6 +120,15 @@ export default function List() {
 }
 ```
 
+#### Conditional Rendering:
++ You can return a JSX expression conditionally with an if statement ie having multiple returns.  
++ You can conditionally save some JSX to a variable and then include it inside other JSX by using the curly braces.  
++ In JSX, `{cond ? <A /> : <B />}` means “if cond, render <A />, otherwise <B />”.  
++ In JSX, `{cond && <A />}` means “if cond, render <A />, otherwise nothing”.
+
+
+#### Fragment
+`<Fragment>`, often used via `<>...</>` syntax, lets you group elements without a wrapper node.
 
 
 
