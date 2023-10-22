@@ -10,9 +10,10 @@ Two options to create react project:
 
 ```
 Topics:
-  ASYNC PROMISES   
-  ASYNC AWAIT   
-  Working with components, props and jsx
+  **ASYNC PROMISES**  
+  **ASYNC AWAIT**   
+  **Working with components, props and jsx**
+  **States, Events, and Forms Interactive Components**  
 ```
 
 ```javascript 
@@ -25,7 +26,6 @@ import './index.css';
 const root =ReactDOM.createRoot(document.getElementById("root"));
 root.render(<React.StrictMode><App/></React.StrictMode>);
 ```
-
 
 
 ### Working with components, props and jsx
@@ -84,6 +84,8 @@ function Avatar(props) {
   //use data by means of props.person , props.size
 }
 ```
+
+
 #### Rendering List   
 **Steps:**  
 + Move the data into an array   
@@ -123,12 +125,48 @@ export default function List() {
 #### Conditional Rendering:
 + You can return a JSX expression conditionally with an if statement ie having multiple returns.  
 + You can conditionally save some JSX to a variable and then include it inside other JSX by using the curly braces.  
-+ In JSX, `{cond ? <A /> : <B />}` means “if cond, render <A />, otherwise <B />”.  
-+ In JSX, `{cond && <A />}` means “if cond, render <A />, otherwise nothing”.
++ In JSX, `{cond ? <A /> : <B />}` means 'if cond, render `<A />`, otherwise `<B /\>`.  
++ In JSX, `{cond && <A />}` means 'if cond, render `\<A /\>`, otherwise nothing'.
 
 
-#### Fragment
+#### Fragment  
 `<Fragment>`, often used via `<>...</>` syntax, lets you group elements without a wrapper node.
+
+___
+
+### States, Events, and Forms Interactive Components  
+
+#### Responding to Events:      
++ You can handle events by passing a function as a prop to an element like <button>.  
++ Event handlers must be passed, not called! `onClick={handleClick}`, not `onClick={handleClick()}`.  
++ You can define an event handler function separately or inline.  
++ Event handlers are defined inside a component, so they can access props.  
++ You can declare an event handler in a parent and pass it as a prop to a child.    
++ You can define your own event handler props with application-specific names.  
++ Events propagate upwards.  `Call e.stopPropagation()` on the first argument to prevent that.  
++ Events may have unwanted default browser behavior. Call `e.preventDefault()` to prevent that.  
++ Explicitly calling an event handler prop from a child handler is a good alternative to propagation.   
+
+#### UseState Hook   
+State is isolated and private.
+**Updating Component State results into rerendering of component** 
+The useState Hook provides those two things:    
++ A state variable to retain the data between renders.   
++ A state setter function to update the variable and trigger React to render the component again.
+_Convention is to name this pair like const `[something, setSomething]`._
+```javascript
+import { useState } from 'react';//importing useState hook
+// COMPONENT STARTS
+const [index, setIndex] = useState(0);//hooks need to be called on top level of component
+//here index is a state variable and setIndex is the setter function.
+function handleClick() {
+  setIndex(index + 1);//here we update state variable by using settler function on certain event
+}
+```
+
+
+
+
 
 
 
