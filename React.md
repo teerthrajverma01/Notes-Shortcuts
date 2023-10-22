@@ -233,11 +233,11 @@ setPerson({
 + Same Component at same position preserve state
 + Different Component at same postion reset state  
   
-Reseting State at same position 
+**Reseting State at same position** 
 - option1:render a component with different position
-- reset state with a key
+- option2:reset state with a key
 
-Preserving state from removed component
+**Preserving state from removed component**   
 _You could lift the state up and hold the pending message for each recipient in the parent component._ 
 _This way, when the child components get removed, it doesn’t matter, because it’s the parent that keeps the important information._
 
