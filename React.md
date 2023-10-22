@@ -10,11 +10,12 @@ Two options to create react project:
 
 ```
 Topics:
-  **ASYNC PROMISES**  
-  **ASYNC AWAIT**   
-  **Working with components, props and jsx**
-  **States, Events, and Forms Interactive Components**
- **Thinking in State Managment**
+**ASYNC PROMISES**  
+**ASYNC AWAIT**   
+**Working with components, props and jsx**
+**States, Events, and Forms Interactive Components**
+**Thinking in State Managment**
+**Thinking in React Component Composition and reusability**
 ```
 
 ```javascript 
@@ -241,8 +242,15 @@ setPerson({
 _You could lift the state up and hold the pending message for each recipient in the parent component._ 
 _This way, when the child components get removed, it doesn’t matter, because it’s the parent that keeps the important information._
 
+#### States when and Where   
+![state when and where](assets/7.3.1.png)   
 
+___
 
+### Thinking in React Component Composition and reusability
+
+#### component category  
+![component_category](assets/8.5.1.png)
 
 
 
