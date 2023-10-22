@@ -164,6 +164,51 @@ function handleClick() {
 }
 ```
 
+#### State as a snapshot(IMP)  
++ Setting state requests a new render.
++ React stores state outside of your component, as if on a shelf.
++ When you call useState, React gives you a snapshot of the state for that render.
++ Variables and event handlers don’t “survive” re-renders. Every render has its own event handlers.
++ Every render (and functions inside it) will always “see” the snapshot of the state that React gave to that render.
++ You can mentally substitute state in event handlers, similarly to how you think about the rendered JSX.
++ Event handlers created in the past have the state values from the render in which they were created.   
+  
+#### Queing a series of state update 
++ Setting state does not change the variable in the existing render, but it requests a new render.
++ React processes state updates after event handlers have finished running. This is called batching.
++ To update some state multiple times in one event, you can use `setNumber(n => n + 1)` updater function.
+
+#### Updating object in state
++ Treat all state in React as immutable.
++ When you store objects in state, mutating them will not trigger renders and will change the state in previous render “snapshots”.
++ Instead of mutating an object, create a new version of it, and trigger a re-render by setting state to it.
++ You can use the `{...obj, something: 'newValue'}` object spread syntax to create copies of objects.
+```javascript
+setPerson({
+  ...person, // Copy the old fields
+  firstName: e.target.value // But override this one
+});
+```
++ Spread syntax is shallow: it only copies one level deep.
++ To update a nested object, you need to create copies all the way up from the place you’re updating.
++ To reduce repetitive copying code, use Immer.
+```javascript
+// Run npm install use-immer to add Immer as a dependency
+// Then replace import { useState } from 'react' with import { useImmer } from 'use-immer'
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
