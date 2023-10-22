@@ -13,7 +13,8 @@ Topics:
   **ASYNC PROMISES**  
   **ASYNC AWAIT**   
   **Working with components, props and jsx**
-  **States, Events, and Forms Interactive Components**  
+  **States, Events, and Forms Interactive Components**
+ **Thinking in State Managment**
 ```
 
 ```javascript 
@@ -196,11 +197,49 @@ setPerson({
 // Run npm install use-immer to add Immer as a dependency
 // Then replace import { useState } from 'react' with import { useImmer } from 'use-immer'
 ```
+#### Updating Arrays in State
++ You can put arrays into state, but you can’t change them.
++ Instead of mutating an array, create a new version of it, and update the state to it.
++ Types of Changes, For Detail `Refer Documentation`.
+  - Adding to an Array
+  - Removing from Array
+  - Transforming an Array
+  - Replacing items in an Array
+  - Inserting into Array
+  - Making other changes to Array
+  - updating objects in Array 
++ You can use the `[...arr, newItem]` array spread syntax to create arrays with new items.
++ You can use filter() and map() to create new arrays with filtered or transformed items.
++ You can use Immer to keep your code concise.
 
+#### Choosing State Structure
++ If two state variables always update together, consider merging them into one.
++ Choose your state variables carefully to avoid creating “impossible” states.
++ Structure your state in a way that reduces the chances that you’ll make a mistake updating it.
++ Avoid redundant and duplicate state so that you don’t need to keep it in sync.
++ Don’t put props into state unless you specifically want to prevent updates.
++ For UI patterns like selection, keep ID or index in state instead of the object itself.
++ If updating deeply nested state is complicated, try flattening it.
 
+#### Sharing States between Components
++ When you want to coordinate two components, move their state to their common parent.
++ Then pass the information down through props from their common parent.
++ Finally, pass the event handlers down so that the children can change the parent’s state.
++ It’s useful to consider components as “controlled” (driven by props) or “uncontrolled” (driven by state).
 
+#### Preserving and reseting states
++ React keeps state for as long as the same component is rendered at the same position.
++ State is not kept in JSX tags. It’s associated with the tree position in which you put that JSX.
++ Same Component at same position preserve state
++ Different Component at same postion reset state  
+  
+Reseting State at same position 
+- option1:render a component with different position
+- reset state with a key
 
-
+Preserving state from removed component
+_You could lift the state up and hold the pending message for each recipient in the parent component._ 
+_This way, when the child components get removed, it doesn’t matter, because it’s the parent that keeps the important information._
 
 
 
