@@ -251,6 +251,16 @@ ___
 
 #### component category  
 ![component_category](assets/8.5.1.png)
+#### component composition
+![component_category](assets/8.7.1.png)
+
+### How React Works behind the scene   
+
+#### How Rendering works   
+![component_category](assets/11.7.1.png)
+
+#### Rules for Render Logic   
+![component_category](assets/11.13.1.png)
 
 
 
