@@ -11,11 +11,12 @@ Two options to create react project:
 ```
 Topics:
 **ASYNC PROMISES**  
-**ASYNC AWAIT**   
-**Working with components, props and jsx**
-**States, Events, and Forms Interactive Components**
-**Thinking in State Managment**
-**Thinking in React Component Composition and reusability**
+**ASYNC AWAIT**     
+**Working with components, props and jsx**   
+**States, Events, and Forms Interactive Components**   
+**Thinking in State Managment**   
+**Thinking in React Component Composition and reusability**  
+**Effects and Data Fetching**  
 ```
 
 ```javascript 
@@ -262,6 +263,14 @@ ___
 #### Rules for Render Logic   
 ![component_category](assets/11.13.1.png)
 
+### Effects and Data Fetching
+
+#### Dependency states
+![dependency states](assets/12.9.1.png)
+#### Effects Execution timeline
+![effects execution timeline](assets/12.9.2.png)
+#### Cleanup function
+![cleanup function](assets/12.15.1.png)
 
 
 
