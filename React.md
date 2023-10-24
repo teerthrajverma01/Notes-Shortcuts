@@ -263,6 +263,8 @@ ___
 #### Rules for Render Logic   
 ![component_category](assets/11.13.1.png)
 
+___
+
 ### Effects and Data Fetching
 
 #### Dependency states
@@ -272,9 +274,23 @@ ___
 #### Cleanup function
 ![cleanup function](assets/12.15.1.png)
 
+### UseReducer  
+The useReducer Hook takes two arguments:  
+- A reducer function
+- An initial state    
+It returns:  
++ A stateful value
++ A dispatch function (to “dispatch” user actions to the reducer)   
 
+To convert from useState to useReducer:  
++ s1: Dispatch actions from event handlers.  
++ s2: Write a reducer function that returns the next state for a given state and action.  
++ s3: Replace useState with useReducer.  
 
-
+Reducers require you to write a bit more code, but they help with debugging and testing.   
+Reducers must be pure.  
+Each action describes a single user interaction.
+ 
 
 
 
